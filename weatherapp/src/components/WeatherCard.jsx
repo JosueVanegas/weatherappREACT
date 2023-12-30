@@ -1,6 +1,8 @@
 import { useState } from "react";
 
+
 const API_KEY = '2f5adc0a2c126d3cad6a224c330d7d47';
+console.log(API_KEY)
 
 const WeatherCard = () => {
   const [weatherData, setWeatherData] = useState({});
@@ -9,7 +11,7 @@ const WeatherCard = () => {
 
   const handleSubmit = async () => {
     try {
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${search.toLowerCase().trim()}&appid=${API_KEY}`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${search.toLowerCase().trim()}&appid=${API_KEY}`;
       const res = await fetch(url);
       const data = await res.json();
       if (!data || data.cod === '404') {
@@ -40,7 +42,7 @@ const WeatherCard = () => {
       case 'Storm': setImage('https://cdn-icons-png.flaticon.com/128/1959/1959334.png')
         break;
       default:
-        setImage('URL_POR_DEFECTO_O_PARA_OTROS_CASOS');
+        setImage('https://cdn-icons-png.flaticon.com/128/169/169367.png');
         break;
     }
   };
@@ -52,7 +54,7 @@ const WeatherCard = () => {
   const feelsLikeCelsius = weatherData.main && weatherData.main.feels_like;
 
   return (
-    <div className="flex justify-center items-center ">
+    <div className="flex justify-center items-center bg-white shadow-2xl ">
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-5xl p-10">Weather</h1>
         <div className="flex flex-col">
@@ -80,7 +82,7 @@ const WeatherCard = () => {
                 <div>
                   {image && (
                     <div>
-                      <img src={image} alt="" />
+                      <img className="bg-white animate-pulse duration-1000" src={image} alt="" />
                     </div>
                   )}
                 </div>
