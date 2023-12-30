@@ -5,7 +5,7 @@ const LoginButton = () => {
   
     return (
       <div className="flex justify-center items-center m-2 pr-10">
-        <button className="bg-slate-300 rounded-xl m-2 p-2  transition-all hover:bg-slate-500 hover:shadow-sm hover:shadow-white hover:text-white" 
+        <button className="bg-slate-300 rounded-xl m-2 p-5 pl-20 pr-20  transition-all hover:bg-slate-500 hover:shadow-sm hover:shadow-white hover:text-white" 
         onClick={() => loginWithRedirect()}>log in</button>
       </div>
     )

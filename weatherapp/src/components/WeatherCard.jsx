@@ -57,16 +57,16 @@ const WeatherCard = () => {
         <h1 className="text-5xl p-10">Weather</h1>
         <div className="flex flex-col">
           <input
-            className="bg-gray-100 text-center p-0 sm:pl-20 sm:p-5 sm:pr-20 m-10 focus:bg-slate-700 rounded-xl focus:text-white"
+            className="bg-gray-100 text-center mb-2 p-0 sm:pl-20 sm:p-5 sm:pr-20 m-10 focus:bg-slate-700 rounded-xl focus:text-white"
             type="text"
             name="search"
             id=""
-            placeholder="Introduce the city"
+            placeholder="Enter a location"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
           <button
-            className="bg-slate-800 p-2 m-10 mt-0 text-white rounded-xl hover:bg-slate-400 hover:text-slate-800"
+            className="bg-slate-800 p-3 m-10 mt-0 text-white rounded-xl hover:bg-slate-400 hover:text-slate-800"
             type="button"  // Cambiado de 'submit' a 'button'
             onClick={handleSubmit}
           >
